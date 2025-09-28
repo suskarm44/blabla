@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue sur blabla</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #eb87de, #ffffff);
+      text-align: center;
+      
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+      margin: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #934caf;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>blabla</h1>
+    <p>Entrez votre pseudo pour commencer</p>
+    <input type="text" id="username" placeholder="Votre pseudo">
+    <br>
+    <button onclick="startGame()">Entrer dans le jeu</button>
+  </div>
+
+  <script>
+    function startGame() {
+      const username = document.getElementById('username').value.trim();
+      if (username === "") {
+        alert("Veuillez entrer un pseudo.");
+        return;
+      }
+      localStorage.setItem('username', username); // Stocke le pseudo
+      window.location.href = "game.html"; // Redirige vers le jeu
+    }
+  </script>
+</body>
+</html>
